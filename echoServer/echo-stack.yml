@@ -1,0 +1,22 @@
+version: '3'
+services:
+  alfa:
+    image: 127.0.0.1:5000/echo
+    environment:
+      - SERVICE_NAME=alfa
+    ports:
+      - "8001:8080"
+  bravo:
+    image: 127.0.0.1:5000/echo
+    environment:
+      - SERVICE_NAME=bravo
+    ports:
+      - "8002:8080"
+  charlie:
+    image: 127.0.0.1:5000/echo
+    environment:
+      - SERVICE_NAME=charlie
+    ports:
+      - "8003:8080"
+    deploy:
+        replicas: 3
