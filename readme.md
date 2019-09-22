@@ -6,7 +6,7 @@
 
 To execute some command in a container you can run `docker exec ...` but you are able to do that only for containers running on that machine. What if we need to do something on all machines in the swarm?
 
-This is a rear problem but if you are in a swarm and need to execute some command in several containers you are in trouble. You can read more about this case in the [issue #27552](https://github.com/moby/moby/issues/27552).
+This is a rare problem but if you are in a swarm and need to execute some command in several containers you are in trouble. You can read more about this case in the [issue #27552](https://github.com/moby/moby/issues/27552).
 
  At first I thought that [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) may do the trick but `docker inspect` does not contain "Log" (where the result is expected) in a swarm.
 
