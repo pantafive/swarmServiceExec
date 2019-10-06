@@ -171,7 +171,7 @@ def call(containers, command):
 
     """
     loop = asyncio.get_event_loop()
-    tasks = [asyncio.ensure_future(call_container(loop, container, args.command)) for container in containers]
+    tasks = [asyncio.ensure_future(call_container(loop, container, command)) for container in containers]
     loop.run_until_complete(asyncio.wait(tasks))
     response = dict(task.result() for task in tasks)
     loop.close()
