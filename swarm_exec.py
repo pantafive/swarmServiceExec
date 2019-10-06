@@ -41,8 +41,8 @@ def get_machines():
     """
     command = ['docker-machine', 'ls', '--format', '{"name":"{{.Name}}", "url":"{{.URL}}"}']
 
-    responcse = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output = responcse.stdout.decode()
+    response = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output = response.stdout.decode()
     output = '[' + ', '.join(output.splitlines()) + ']'
     output = json.loads(output)
     return output
